@@ -27,7 +27,7 @@ public class CreateCar extends CarModel implements Car, InitializingBean, Dispos
     }
 
     public CreateCar(Oil oil, Engine engine, Transmission transmission, String color, int year, boolean soundEnabled) {
-        super(oil, engine, transmission);
+      //  super(oil, engine, transmission);
         this.color = color;
         this.year = year;
         this.soundEnabled = soundEnabled;
@@ -89,7 +89,7 @@ public class CreateCar extends CarModel implements Car, InitializingBean, Dispos
 
     @Override
     public void afterPropertiesSet() throws Exception {
- //       System.out.println(this + "- method init()");
+        System.out.println(this + "- method init()");
 
     }
 }

@@ -3,19 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd"
        default-lazy-init="true">
 
-
-    <context:annotation-config/>
+    <!--<context:annotation-config/>-->
 
     <import resource="ferrari_context.xml"/>
     <import resource="gelly_context.xml"/>
 
-    <bean id="createCarNew" class="impls.car.CreateCar" scope="prototype">
-
-
-    </bean>
+    <bean id="createCar" class="impls.car.CreateCar" scope="prototype"/>
 
 
 </beans>
