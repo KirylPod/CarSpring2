@@ -27,9 +27,13 @@ public abstract class CarModel implements Car {
 //        this.transmission = transmission;
 //    }
 
-    public Oil getOil() { return oil;}
+    public Oil getOil() {
+        return oil;
+    }
 
-    public void setOil(Oil oil) { this.oil = oil;  }
+    public void setOil(Oil oil) {
+        this.oil = oil;
+    }
 
 
     public Engine getEngine() {

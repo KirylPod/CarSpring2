@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-autowire-candidates="false"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
 
-    <bean class="impls.gelly.GellyOil">
-        <property name="gellyOil" value="gas"/>
-        <qualifier value="gellyGasOil"></qualifier>
-    </bean>
-
-    <bean class="impls.gelly.GellyOil">
-        <property name="gellyOil" value="water"/>
-        <qualifier value="gellyWaterOil"></qualifier>
-    </bean>
 
     <bean id="gellyEngine" class="impls.gelly.GellyEngine"/>
-    <bean id="gellyTransmission" class="impls.gelly.GellyTransmission" />
+    <bean id="gellyOil" class="impls.gelly.GellyOil"/>
+    <bean id="gellyTransmission" class="impls.gelly.GellyTransmission"/>
+
+
+    <!--<bean class="impls.gelly.GellyOil">-->
+        <!--<property name="gellyOil" value="gas"/>-->
+        <!--<qualifier value="gellyGasOil"></qualifier>-->
+    <!--</bean>-->
+
+    <!--<bean class="impls.gelly.GellyOil">-->
+        <!--<property name="gellyOil" value="water"/>-->
+        <!--<qualifier value="gellyWaterOil"></qualifier>-->
+    <!--</bean>-->
+
+    <!--<bean id="gellyEngine" class="impls.gelly.GellyEngine"/>-->
+    <!--<bean id="gellyTransmission" class="impls.gelly.GellyTransmission" />-->
 
 </beans>
