@@ -3,13 +3,11 @@ package pool;
 import enums.ColorStyle;
 import interfaces.Car;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import qualifiers.CarType;
 
-@Component
-public class CarPool  {
-    public CarPool(){
-        System.out.println("CarPool constructor");
+public class CarPool {
+    public CarPool() {
+        System.out.println("Car pool constructor()");
     }
 
     @Autowired

@@ -6,7 +6,6 @@ import interfaces.Oil;
 import interfaces.Transmission;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 public abstract class CarModel implements Car {
 
     @Autowired

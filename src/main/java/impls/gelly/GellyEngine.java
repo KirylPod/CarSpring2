@@ -1,9 +1,10 @@
 package impls.gelly;
 
 import interfaces.Engine;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class GellyEngine implements Engine {
 
     @Override

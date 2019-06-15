@@ -1,9 +1,10 @@
 package impls.gelly;
 
 import interfaces.Transmission;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class GellyTransmission implements Transmission {
 
     @Override

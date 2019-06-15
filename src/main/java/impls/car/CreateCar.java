@@ -2,7 +2,6 @@ package impls.car;
 
 import abstracts.CarModel;
 import enums.ColorStyle;
-import interfaces.Car;
 import interfaces.Engine;
 import interfaces.Oil;
 import interfaces.Transmission;
@@ -14,14 +13,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-public class CreateCar extends CarModel implements Car, InitializingBean, DisposableBean {
+@Configuration
+public class CreateCar extends CarModel implements InitializingBean, DisposableBean {
 
     private ColorStyle color;
     private int year;
     private boolean soundEnabled;
 
-    public CreateCar(){    }
+    public CreateCar() {
+    }
 
 //    public CreateCar(Oil oil, Engine engine, Transmission transmission) {
 //        super(oil, engine, transmission);
@@ -29,13 +29,13 @@ public class CreateCar extends CarModel implements Car, InitializingBean, Dispos
 
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public CreateCar createCar1(){
+    public CreateCar createCar1() {
         return new CreateCar();
     }
 
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public CreateCar createCar2(){
+    public CreateCar createCar2() {
         return new CreateCar(ColorStyle.BLACK, 2010, true);
     }
 
@@ -47,7 +47,7 @@ public class CreateCar extends CarModel implements Car, InitializingBean, Dispos
     }
 
     public CreateCar(Oil oil, Engine engine, Transmission transmission, ColorStyle color, int year, boolean soundEnabled) {
-      //  super(oil, engine, transmission);
+        //  super(oil, engine, transmission);
         this.color = color;
         this.year = year;
         this.soundEnabled = soundEnabled;
@@ -94,7 +94,7 @@ public class CreateCar extends CarModel implements Car, InitializingBean, Dispos
         this.soundEnabled = soundEnabled;
     }
 
-    public void initObject(){
+    public void initObject() {
         System.out.println("Init");
     }
 

@@ -1,9 +1,10 @@
 package impls.ferrari;
 
 import interfaces.Transmission;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
+@Configuration
 public class FerrariTransmission implements Transmission {
 
     @Override
