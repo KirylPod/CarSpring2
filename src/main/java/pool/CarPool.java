@@ -1,56 +1,33 @@
 package pool;
 
+import enums.ColorStyle;
 import interfaces.Car;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.Collection;
-import java.util.Map;
+import qualifiers.CarType;
 
 @Component
-public class CarPool implements interfaces.CarPool {
-
-    //    private Map<String, Car> carCollection;
-//
-//    public CarPool(Map<String, Car> carCollection) {         //передача коллекции через конструктор
-//        super();
-//        this.carCollection = carCollection;
-//    }
-//
-//    @Override
-//    public Map<String, Car> getCarCollections() {
-//        return carCollection;
-//    }
-//    public void action(){
-//      for (Map.Entry<String,Car> entry : carCollection.entrySet()) {
-//          System.out.println(entry.getKey());
-//          entry.getValue().go();
-//      }
-//
-//   }
-
-    private Collection<Car> carCollection;
-
-    public CarPool(Collection<Car> carCollection) {
-        this.carCollection = carCollection;
+public class CarPool  {
+    public CarPool(){
+        System.out.println("CarPool constructor");
     }
 
-    @Override
-    public Collection<Car> getCarCollection() {
-        return carCollection;
+    @Autowired
+    @CarType(sound = false, color = ColorStyle.BLACK)
+    public Car blackCar;
+
+    @Autowired
+    @CarType(sound = true, color = ColorStyle.BLACK)
+    public Car blackSoundableCar;
+
+    public Car getBlackCar() {
+        return blackCar;
     }
 
-//    public void action() {
-//        for (Car car : carCollection) {
-//            car.go();
-//        }
-//    }
-
-    public void beginBuild() {
-        for (Car car : carCollection) {
-            car.go();
-
-        }
+    public Car getBlackSoundableCar() {
+        return blackSoundableCar;
     }
-
-
 }
+
+
+
